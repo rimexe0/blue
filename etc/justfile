@@ -32,30 +32,53 @@ setup-flatpaks:
       flatpak install --user --noninteractive flathub $pkg; \
   done
 
-setup-pwa:
-  echo 'Giving browser permission to create PWAs (Progressive Web Apps)'
-  # Add for your favorite chromium-based browser
-  flatpak override --user --filesystem=~/.local/share/applications --filesystem=~/.local/share/icons com.microsoft.Edge
-
-setup-gaming:
-  echo 'Setting up gaming experience ... lock and load.'
+installapps:
+  #!/bin/bash
+  echo 'stuff that i need on a setup'
   flatpak install -y --user \\
   com.discordapp.Discord \\
-  com.feaneron.Boatswain \\
   org.freedesktop.Platform.VulkanLayer.MangoHud//22.08 \\
   org.freedesktop.Platform.VulkanLayer.OBSVkCapture//22.08 \\
   org.freedesktop.Platform.VulkanLayer.vkBasalt//22.08 \\
-  com.heroicgameslauncher.hgl \\
   com.obsproject.Studio \\
   com.obsproject.Studio.Plugin.OBSVkCapture \\
   com.obsproject.Studio.Plugin.Gstreamer \\
   com.usebottles.bottles \\
   com.valvesoftware.Steam \\
   com.valvesoftware.Steam.Utility.gamescope \\
-  net.davidotek.pupgui2
+  net.davidotek.pupgui2 \\
+  org.mozilla.Thunderbird \\
+  org.libreoffice.LibreOffice \\
+  org.gnome.DejaDup \\
+  net.lutris.Lutris \\
+  com.github.debauchee.barrier \\
+  org.avidemux.Avidemux \\
+  com.obsproject.Studio \\
+  sh.ppy.osu \\
+  org.qbittorrent.qBittorrent \\
+  com.spotify.Client \\
+  org.kde.filelight \\
   flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications 
   flatpak override --user --env=MANGOHUD=1 com.valvesoftware.Steam 
-  flatpak override --user --env=MANGOHUD=1 com.heroicgameslauncher.hgl 
+  flatpak override --user --env=MANGOHUD=1 com.heroicgameslauncher.hgl
+  
+  rpm-ostree install bismuth
+
+  wget https://github.com/hwsmm/OpenTabletDriver.Packaging/releases/download/test/OpenTabletDriver.rpm
+  rpm-ostree install OpenTabletDriver.rpm -y
+  systemctl --user daemon-reload
+  systemctl --user enable opentabletdriver --now
+  echo "blacklist wacom" | sudo tee -a /etc/modprobe.d/blacklist.conf
+  sudo rmmod wacom
+  
+restoreconf:
+  #!/bin/bash
+  mkdir bullshit
+  cd bullshit
+  python -m pip install konsave
+  wget https://github.com/rimexe0/config/raw/main/kdeconf.knsv
+  konsave -i kdeconf.knsv
+  konsave -a kdeconf
 
 nix-me-up:
   echo 'Setting phasers to kill. Installing nix.'
