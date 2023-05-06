@@ -1,4 +1,4 @@
-# Starting point
+# blue
 
 [![build-ublue](https://github.com/rimexe0/blue/actions/workflows/build.yml/badge.svg)](https://github.com/rimexe0/blue/actions/workflows/build.yml)
 
