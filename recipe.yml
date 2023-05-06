@@ -34,18 +34,4 @@ rpms:
 # this is just an example selection.
 # If you leave this empty you can use yafti for post-boot installation
 flatpaks:
-  - org.mozilla.firefox
-  - org.mozilla.Thunderbird
-  - org.libreoffice.LibreOffice
-  - org.gnome.DejaDup
-  - com.discordapp.Discord
-  - com.valvesoftware.Steam
-  - net.lutris.Lutris
-  - com.github.debauchee.barrier
-  - org.avidemux.Avidemux
-  - com.obsproject.Studio
-  - sh.ppy.osu
-  - org.qbittorrent.qBittorrent
-  - com.spotify.Client
-  - org.mozilla.Thunderbird
-  - org.kde.filelight
+
