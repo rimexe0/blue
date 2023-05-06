@@ -34,4 +34,24 @@ rpms:
 # this is just an example selection.
 # If you leave this empty you can use yafti for post-boot installation
 flatpaks:
-
+  - com.discordapp.Discord 
+  - org.freedesktop.Platform.VulkanLayer.MangoHud 
+  - org.freedesktop.Platform.VulkanLayer.OBSVkCapture - 
+  - org.freedesktop.Platform.VulkanLayer.vkBasalt
+  - com.obsproject.Studio 
+  - com.obsproject.Studio.Plugin.OBSVkCapture 
+  - com.obsproject.Studio.Plugin.Gstreamer 
+  - com.usebottles.bottles 
+  - com.valvesoftware.Steam 
+  - com.valvesoftware.Steam.Utility.gamescope 
+  - net.davidotek.pupgui2 
+  - org.mozilla.Thunderbird 
+  - org.libreoffice.LibreOffice 
+  - org.gnome.DejaDup net.lutris.Lutris 
+  - com.github.debauchee.barrier 
+  - org.avidemux.Avidemux 
+  - com.obsproject.Studio 
+  - sh.ppy.osu 
+  - org.qbittorrent.qBittorrent 
+  - com.spotify.Client 
+  - org.kde.filelight
